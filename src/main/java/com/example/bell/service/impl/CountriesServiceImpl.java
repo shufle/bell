@@ -1,7 +1,8 @@
-package com.example.bell.service;
+package com.example.bell.service.impl;
 
 import com.example.bell.dao.CountriesDao;
 import com.example.bell.model.Country;
+import com.example.bell.service.CountriesService;
 import com.example.bell.view.CountriesView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,7 +12,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Service
-public class CountriesServiceImpl implements  CountriesService {
+public class CountriesServiceImpl implements CountriesService {
 
     private final CountriesDao dao;
 
@@ -19,7 +20,6 @@ public class CountriesServiceImpl implements  CountriesService {
     public CountriesServiceImpl(CountriesDao dao) {
         this.dao = dao;
     }
-
 
     @Override
     public List<CountriesView> getAllCountries() {

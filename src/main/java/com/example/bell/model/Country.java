@@ -3,6 +3,7 @@ package com.example.bell.model;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.List;
 
 /**
  * Таблица стран
@@ -30,6 +31,10 @@ public class Country {
      */
     @Column(name = "name", length = 50, nullable = false)
     private String name;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "citizenship_code")
+    private List<User> users;
 
     /**
      * Пустой конструктор для hibernate
